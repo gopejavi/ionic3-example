@@ -23,9 +23,7 @@ export class HomePage {
       state: 'FL'
     }
     this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe(weather => {
-      //console.log(weather.current_observation.display_location.full);
       this.weather = weather.current_observation;
-      console.log(this.weather);
     });
   }
 }
