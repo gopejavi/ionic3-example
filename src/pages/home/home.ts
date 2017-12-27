@@ -41,8 +41,9 @@ export class HomePage {
           state: 'FL'
         }
       }
-      this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe(weather => {
+      this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe((weather: any) => {
         this.weather = weather.current_observation;
+        console.log(weather.current_observation);
       });
     }));
   }
