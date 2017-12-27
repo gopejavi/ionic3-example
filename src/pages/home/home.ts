@@ -21,12 +21,12 @@ export class HomePage {
   ) {
     this.storage.get('location').then((val) => {
       if (val != null) {
-        let location = JSON.parse(val);
-        this.city = location.city;
-        this.state = location.state;
+        this.location = JSON.parse(val);
       } else {
-        this.city = 'Miami';
-        this.state = 'FL';
+        this.location = {
+          city: 'Miami',
+          state: 'FL'
+        }
       }
     });
   }

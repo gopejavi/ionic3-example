@@ -24,8 +24,16 @@ export class SettingsPage {
     public navParams: NavParams,
     private storage: Storage
   ) {
-    this.city = 'Miami';
-    this.state = 'FL';
+    this.storage.get('location').then((val) => {
+      if (val != null) {
+        let location = JSON.parse(val);
+        this.city = location.city;
+        this.state = location.state;
+      } else {
+        this.city = 'Miami';
+        this.state = 'FL';
+      }
+    });
   }
 
   ionViewDidLoad() {
