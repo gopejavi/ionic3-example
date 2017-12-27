@@ -19,8 +19,7 @@ export class WeatherProvider {
   }
 
   getWeather(city, state) {
-    console.log(this.url + state + '/' + city + '.json');
-    return this.http.get(this.url + state + '/' + city + '.json');
+    return this.http.get(this.url + state + '/' + city + '.json').map(res => res.json());
   }
 
 }
